@@ -1,0 +1,30 @@
+mat-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-right: 16px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}

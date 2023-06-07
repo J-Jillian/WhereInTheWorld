@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
