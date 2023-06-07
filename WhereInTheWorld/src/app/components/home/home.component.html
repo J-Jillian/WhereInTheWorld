@@ -1,0 +1,8 @@
+<h1>What in the world</h1>
+<!-- <button (click)="addVisitedCountry()">add</button> -->
+<div *ngFor="let country of countriesApiList; let i = index">
+  <app-countries
+    [countryProp]="country"
+    (addToVisited)="addToVisited($event)"
+  ></app-countries>
+</div>
