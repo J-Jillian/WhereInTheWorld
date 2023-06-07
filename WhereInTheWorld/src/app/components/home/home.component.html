@@ -1,7 +1,30 @@
-<h1>What in the world</h1>
+<h1>Where in the world</h1>
+<br />
+
+<div class="filter-container mat-elevation-z2">
+  <mat-form-field appearance="fill">
+    <mat-label>Search by country name</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Search by country name"
+      [(ngModel)]="searchQuery"
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="filterCountryByName(searchQuery)"
+  >
+    Search
+  </button>
+</div>
+
 <!-- <button (click)="addVisitedCountry()">add</button> -->
-<div *ngFor="let country of countriesApiList; let i = index">
+<div class="countries-container">
   <app-countries
+    *ngFor="let country of filteredCountries; let i = index"
     [countryProp]="country"
     (addToVisited)="addToVisited($event)"
   ></app-countries>

@@ -1,0 +1,26 @@
+.flag-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(117, 118, 118, 0.3); /* Add a shadow effect */
+    border-radius: 10px; /* Add rounded corners */
+  }
+  
+  .flag-card img {
+    height: 180px; /* Adjust the height as desired */
+    width: 220px;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+  }
+  
+  .mat-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px; /* Add padding to align with the card content */
+  }
+  
+  .mat-card-title {
+    text-align: left; /* Align the text to the left */
+    overflow: hidden; /* Truncate the text and hide the overflow */
+    text-overflow: ellipsis; /* Show an ellipsis (...) for truncated text */
+  }
+  

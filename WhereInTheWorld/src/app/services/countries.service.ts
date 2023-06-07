@@ -25,4 +25,8 @@ export class CountriesService {
   postCountryList(country: any): Observable<any> {
     return this.http.post<any>(`${this.MY_API_URL}/visited`, country);
   }
+
+  deleteVisited(country: any): Observable<any> {
+    return this.http.delete<any>(`${this.MY_API_URL}/visited`, country);
+  }
 }

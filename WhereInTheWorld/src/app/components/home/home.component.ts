@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { CountriesService } from 'src/app/services/countries.service';
 import { CountryApi } from 'src/app/models/CountryApi.model';
 import { Router } from '@angular/router';
-import { Visited } from 'src/app/models/Visited.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
+// import { Visited } from 'src/app/models/Visited.model';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +14,26 @@ import { Visited } from 'src/app/models/Visited.model';
 export class HomeComponent implements OnInit {
   countriesApiList: CountryApi[] = [];
   visitedList: CountryApi[] = [];
+  filteredCountries: CountryApi[] = [];
+  _searchQuery: string = '';
+
+  get searchQuery() {
+    return this._searchQuery;
+  }
+
+  set searchQuery(value: string) {
+    this._searchQuery = value;
+    this.filteredCountries = this.filterCountryByName(value);
+  }
 
   constructor(
     private router: Router,
-    private countriesService: CountriesService
+    private countriesService: CountriesService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
+    this.filteredCountries = this.countriesApiList;
     this.countriesService.getAllCountries().subscribe({
       next: (dataResult) => {
         console.log(dataResult);
@@ -43,22 +57,25 @@ export class HomeComponent implements OnInit {
   }
   //1
   addToVisited(country: CountryApi) {
-    const body : any = {
+    const body: any = {
       countryName: country.name,
       countryPopulation: country.population,
       countryRegion: country.region,
       countryCapital: country.capital[0],
-      countryFlag: country.flags,
+      flags: country.flags,
     };
     console.log('body:', body);
     console.log('country:', country);
     this.countriesService.postCountryList(body).subscribe({
       next: (data) => {
         console.log(data);
+        this.snackBar.open('Added to your visited countries', 'Close', {
+          duration: 3000,
+        });
       },
     });
     this.visitedList.push(country);
-    this.router.navigate(['/visited']);
+    // this.router.navigate(['/visited']);
   }
 
   // addVisitedCountry(): void {
@@ -70,4 +87,14 @@ export class HomeComponent implements OnInit {
 
   //   addToWishList(){}
   // }
+
+  filterCountryByName(name: string) {
+    if (this.countriesApiList.length === 0 || this.searchQuery === '') {
+      return this.countriesApiList;
+    } else {
+      return this.countriesApiList.filter((country) => {
+        return country.name.toLowerCase().includes(name.toLowerCase());
+      });
+    }
+  }
 }

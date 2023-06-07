@@ -1,0 +1,33 @@
+.countries-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0, auto;
+}
+
+.app-countries {
+  flex-basis: calc(
+    25% - 20px
+  ); /* Adjust the width of each column and add padding for spacing */
+  margin-bottom: 20px; /* Add space between cards */
+  padding: 2000px; /* Add padding within each card */
+  box-sizing: border-box; /* Ensure the padding does not affect the overall width */
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field {
+  margin-right: 16px;
+  flex: 1;
+}
+
+button {
+  min-width: 120px;
+}
