@@ -21,10 +21,15 @@ a {
   font-weight: bold;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 .active {
-  text-decoration: underline;
+  color: pink;
+  text-decoration: none;
+}
+
+.heart-symbol {
+  margin-left: 5px;
 }

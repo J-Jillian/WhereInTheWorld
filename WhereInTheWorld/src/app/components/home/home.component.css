@@ -54,4 +54,5 @@ button {
   padding: 20px;
   box-shadow: 10 px 10px rgba(165, 163, 163, 0.1);
   max-width: 100%;
+  width: 300px;
 }

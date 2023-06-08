@@ -5,13 +5,17 @@
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a>
+        >HOME</a
+      >
     </li>
     <li>
-      <a routerLink="/visited" routerLinkActive="active">Visited</a>
+      <a routerLink="/visited" routerLinkActive="active">VISITED COUNTRIES</a>
     </li>
     <li>
-      <a routerLink="/wishlist" routerLinkActive="active">Wishlist</a>
+      <a routerLink="/wishlist" routerLinkActive="active">WISHLIST</a>
+      <span routerLinkActive="active" class="heart-symbol"
+        >&#x2764;&#xFE0E;</span
+      >
     </li>
   </ul>
 </mat-toolbar>
