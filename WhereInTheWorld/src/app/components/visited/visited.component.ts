@@ -32,14 +32,8 @@ export class VisitedComponent implements OnInit {
   }
 
   deleteVisitedCountry(country: CountryApi) {
-    const body: any = {
-      countryName: country.name,
-      countryPopulation: country.population,
-      countryRegion: country.region,
-      countryCapital: country.capital ? country.capital[0] : '',
-      flags: country.flags,
-    };
-    this.countriesService.deleteVisited(body).subscribe({
+    
+    this.countriesService.deleteVisited(country.id).subscribe({
       next: (data) => {
         console.log('Country deleted:' + data.name);
       },

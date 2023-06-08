@@ -26,7 +26,11 @@ export class CountriesService {
     return this.http.post<any>(`${this.MY_API_URL}/visited`, country);
   }
 
-  deleteVisited(country: any): Observable<any> {
-    return this.http.delete<any>(`${this.MY_API_URL}/visited`, country);
+  deleteVisited(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.MY_API_URL}/visited/${id}`);
   }
+
+  // postCountryList(country: any): Observable<any> {
+  //   return this.http.post<any>(`${this.MY_API_URL}/visited`, country);
+  // }
 }

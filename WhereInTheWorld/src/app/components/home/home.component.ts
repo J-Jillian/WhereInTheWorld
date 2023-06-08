@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < dataResult.length; i++) {
           this.countriesApiList.push(
             new CountryApi(
+              dataResult[i].id,
               dataResult[i].name.official,
               dataResult[i].population,
               dataResult[i].region,

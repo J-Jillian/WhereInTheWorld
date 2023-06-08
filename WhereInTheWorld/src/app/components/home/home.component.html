@@ -22,11 +22,11 @@
   </button>
 </div>
 
-<!-- <button (click)="addVisitedCountry()">add</button> -->
-<div class="countries-container">
+<div class="grid-container">
   <app-countries
     *ngFor="let country of filteredCountries; let i = index"
     [countryProp]="country"
     (addToVisited)="addToVisited($event)"
+    class="grid-item"
   ></app-countries>
 </div>
