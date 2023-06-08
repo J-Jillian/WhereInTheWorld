@@ -1,30 +1,34 @@
-<h1>Visited Countries</h1>
+<body>
+  <header>
+    <h1>Visited Countries</h1>
+  </header>
 
-<div class="grid-container">
-  <mat-card class="grid-item" *ngFor="let country of visitedCountries">
-    <img mat-card-image [src]="country.flags" alt="country flag image" />
-    <mat-card-header>
-      <mat-card-title>{{ country.countryName }}</mat-card-title>
-      <mat-card-subtitle
-        >Capital: {{ country.countryCapital }}</mat-card-subtitle
-      >
-    </mat-card-header>
-    <mat-card-content>
-      <p>Population: {{ country.countryPopulation }}</p>
-      <p>Region:{{ country.countryRegion }}</p>
-      <app-visited-city [countryId]="country.id"></app-visited-city>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button color="primary" (click)="addVisitedCity(country)">
-        Add a city
-      </button>
-      <button
-        (click)="deleteVisitedCountry(country)"
-        mat-button
-        color="primary"
-      >
-        Delete country
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+  <div class="grid-container">
+    <mat-card class="grid-item" *ngFor="let country of visitedCountries">
+      <img mat-card-image [src]="country.flags" alt="country flag image" />
+      <mat-card-header>
+        <mat-card-title>{{ country.countryName }}</mat-card-title>
+        <mat-card-subtitle
+          >Capital: {{ country.countryCapital }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <p>Population: {{ country.countryPopulation }}</p>
+        <p>Region:{{ country.countryRegion }}</p>
+        <app-visited-city [countryId]="country.id"></app-visited-city>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="addVisitedCity(country)">
+          Add a city
+        </button>
+        <button
+          (click)="deleteVisitedCountry(country)"
+          mat-button
+          color="primary"
+        >
+          Delete country
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</body>
