@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { VisitedCityComponent } from './components/visited-city/visited-city.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     WishListComponent,
     CountriesComponent,
     NavBarComponent,
+    VisitedCityComponent,
   ],
   imports: [
     BrowserModule,

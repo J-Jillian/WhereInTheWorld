@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { CountryApi } from '../models/CountryApi.model';
 import { map } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,6 +17,12 @@ export class CountriesService {
 
   getAllCountries(): Observable<any[]> {
     return this.http.get<any[]>(`${this.API_URL}/all`);
+  }
+
+  getVisitedByCountry(countryId: number): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${this.MY_API_URL}/getVisitedByCountry/${countryId}`
+    );
   }
 
   getAllVisited(): Observable<any[]> {
@@ -39,5 +44,4 @@ export class CountriesService {
       body
     );
   }
-
 }
