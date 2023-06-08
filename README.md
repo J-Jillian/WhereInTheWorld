@@ -30,3 +30,7 @@ You can create a list of visited countries, add cities you have visited within e
 The Where in the World app includes unit and integration tests to ensure the functionality of its features. These tests cover the backend components.
 ## Class Diagram and Use Case Diagram
 ## License
+
+## Happy coding 💙
+
+Thank you for using the Where in the World app! We hope you enjoy exploring different countries.
