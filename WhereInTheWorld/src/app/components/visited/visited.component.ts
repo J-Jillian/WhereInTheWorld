@@ -10,6 +10,8 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class VisitedComponent implements OnInit {
   visitedCountries: any[] = [];
+  cities: any[] = [];
+
   // currentCountry: any = {
   //   name: "",
   //   population: 0,
@@ -32,7 +34,6 @@ export class VisitedComponent implements OnInit {
   }
 
   deleteVisitedCountry(country: CountryApi) {
-    
     this.countriesService.deleteVisited(country.id).subscribe({
       next: (data) => {
         console.log('Country deleted:' + data.name);
@@ -41,20 +42,23 @@ export class VisitedComponent implements OnInit {
     this.visitedCountries.splice(this.visitedCountries.indexOf(country), 1);
   }
 
-  addVisitedCity(country: CountryApi){
-    let visitedCity = prompt("Whats the city?")
+  addVisitedCity(country: CountryApi) {
+    let visitedCity = prompt("What's the city?");
 
-    if(visitedCity){
-      console.log(country.id + " - " + visitedCity);
-
-      this.countriesService.patchCountryCityName(country, visitedCity).subscribe({
-        next: (data) => {
-          console.log('Country city visited updated')
-        },
-        error: (error) => {
-          console.log(error.message);
-        }
-      })
+    if (visitedCity) {
+      this.countriesService
+        .patchCountryCityName(country, visitedCity)
+        .subscribe({
+          next: (data) => {
+            country.cityName = visitedCity;
+            // this.cities = data;
+            console.log("llllllllllllllll"+visitedCity);
+            console.log('Country city visited updated');
+          },
+          error: (error) => {
+            console.log(error.message);
+          },
+        });
     }
   }
 }

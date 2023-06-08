@@ -45,7 +45,8 @@ export class HomeComponent implements OnInit {
               dataResult[i].population,
               dataResult[i].region,
               dataResult[i].capital,
-              dataResult[i].flags.png
+              dataResult[i].flags.png,
+              dataResult[i].visitedCity
             )
           );
         }

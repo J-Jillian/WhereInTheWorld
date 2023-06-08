@@ -12,9 +12,15 @@
     <mat-card-content>
       <p>Population: {{ country.countryPopulation }}</p>
       <p>Region:{{ country.countryRegion }}</p>
+      <h3>Visited cities:</h3>
+      <ul *ngFor="let city of visitedCountries">
+        <li>{{ country.cityName }}</li>
+      </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="primary" (click)="addVisitedCity(country)">Add a city</button>
+      <button mat-button color="primary" (click)="addVisitedCity(country)">
+        Add a city
+      </button>
       <button
         (click)="deleteVisitedCountry(country)"
         mat-button

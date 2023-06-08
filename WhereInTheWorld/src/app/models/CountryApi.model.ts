@@ -5,9 +5,17 @@ export class CountryApi {
     private _population: string,
     private _region: string,
     private _capital: string,
-    private _flags: any
+    private _flags: any,
+    private _cityName: string | null
   ) {}
 
+  get cityName(): string | null {
+    return this._cityName;
+  }
+
+  set cityName(cityName: string | null) {
+    this._cityName = cityName;
+  }
   get id(): number {
     return this._id;
   }
