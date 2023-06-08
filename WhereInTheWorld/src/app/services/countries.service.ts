@@ -29,12 +29,23 @@ export class CountriesService {
     return this.http.get<any[]>(`${this.MY_API_URL}/all`);
   }
 
+  getWishList(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.MY_API_URL}/all/wishlist`);
+  }
+
+  postWishList(country: any): Observable<any> {
+    return this.http.post<any>(`${this.MY_API_URL}/wishlist`, country);
+  }
+
   postCountryList(country: any): Observable<any> {
     return this.http.post<any>(`${this.MY_API_URL}/visited`, country);
   }
 
   deleteVisited(id: number): Observable<any> {
     return this.http.delete<any>(`${this.MY_API_URL}/visited/${id}`);
+  }
+  deleteWishList(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.MY_API_URL}/wishlist/${id}`);
   }
 
   patchCountryCityName(country: any, visitedCity: string): Observable<any> {

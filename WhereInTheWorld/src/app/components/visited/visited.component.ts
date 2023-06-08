@@ -52,7 +52,6 @@ export class VisitedComponent implements OnInit {
           next: (data) => {
             country.cityName = visitedCity;
             // this.cities = data;
-            console.log("llllllllllllllll"+visitedCity);
             console.log('Country city visited updated');
           },
           error: (error) => {

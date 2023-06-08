@@ -15,6 +15,7 @@ export class CountriesComponent {
   visited!: Visited;
 
   @Output() addToVisited = new EventEmitter<CountryApi>();
+  @Output() addToWishList = new EventEmitter<CountryApi>();
   @Output() addVisitedCountry = new EventEmitter<Visited>();
 
   selectedCountry: CountryApi | null;
@@ -31,6 +32,10 @@ export class CountriesComponent {
 
   onAddToVisited(): void {
     this.addToVisited.emit(this.country);
+  }
+
+  onAddToWishList(): void {
+    this.addToWishList.emit(this.country);
   }
 
   onaddVisitedCountry(): void {

@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class HomeComponent implements OnInit {
   countriesApiList: CountryApi[] = [];
   visitedList: CountryApi[] = [];
+  wishList: CountryApi[] = [];
   filteredCountries: CountryApi[] = [];
   _searchQuery: string = '';
 
@@ -77,6 +78,29 @@ export class HomeComponent implements OnInit {
       },
     });
     this.visitedList.push(country);
+    // this.router.navigate(['/visited']);
+  }
+
+
+  addToWishList(country: CountryApi) {
+    const body: any = {
+      countryName: country.name,
+      countryPopulation: country.population,
+      countryRegion: country.region,
+      countryCapital: country.capital[0],
+      flags: country.flags,
+    };
+    console.log('body:', body);
+    console.log('country:', country);
+    this.countriesService.postWishList(body).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.snackBar.open('Added to your WishList countries', 'Close', {
+          duration: 3000,
+        });
+      },
+    });
+    this.wishList.push(country);
     // this.router.navigate(['/visited']);
   }
 
