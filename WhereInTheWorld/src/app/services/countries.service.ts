@@ -30,7 +30,11 @@ export class CountriesService {
     return this.http.delete<any>(`${this.MY_API_URL}/visited/${id}`);
   }
 
-  patchCountryCityName(country: any): Observable<any> {
-    return this.http.post<any>(`${this.MY_API_URL}/visited`, country);
+  patchCountryCityName(country: any, visitedCity: string): Observable<any> {
+    let body = { cityName: visitedCity };
+    return this.http.patch<any>(
+      `${this.MY_API_URL}/visited/${country.id}`,
+      body
+    );
   }
 }

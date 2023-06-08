@@ -24,7 +24,6 @@ export class CountriesComponent {
     this.selectedCountry = null;
   }
 
-
   showCountry(country: CountryApi): void {
     this.selectedCountry = country;
     this.hasDetails = !this.hasDetails;

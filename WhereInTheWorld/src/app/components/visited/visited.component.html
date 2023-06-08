@@ -14,7 +14,7 @@
       <p>Region:{{ country.countryRegion }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="primary">Add a city</button>
+      <button mat-button color="primary" (click)="addVisitedCity(country)">Add a city</button>
       <button
         (click)="deleteVisitedCountry(country)"
         mat-button

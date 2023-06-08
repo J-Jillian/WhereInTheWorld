@@ -40,4 +40,21 @@ export class VisitedComponent implements OnInit {
     });
     this.visitedCountries.splice(this.visitedCountries.indexOf(country), 1);
   }
+
+  addVisitedCity(country: CountryApi){
+    let visitedCity = prompt("Whats the city?")
+
+    if(visitedCity){
+      console.log(country.id + " - " + visitedCity);
+
+      this.countriesService.patchCountryCityName(country, visitedCity).subscribe({
+        next: (data) => {
+          console.log('Country city visited updated')
+        },
+        error: (error) => {
+          console.log(error.message);
+        }
+      })
+    }
+  }
 }
