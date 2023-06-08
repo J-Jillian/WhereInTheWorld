@@ -1,4 +1,4 @@
-# Where in the World App 🌏
+# 🌏 Where in the World App 🇺🇸 🇧🇷 🇬🇧 🇵🇹 🇫🇷 🇪🇸 🇩🇪 🇲🇽
 
 Welcome to Where in the World, an educational app designed to help you learn about different countries around the world.
 
@@ -34,3 +34,4 @@ The Where in the World app includes unit and integration tests to ensure the fun
 ## Happy coding 💙
 
 Thank you for using the Where in the World app! We hope you enjoy exploring different countries.
+
