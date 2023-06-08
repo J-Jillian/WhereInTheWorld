@@ -22,7 +22,7 @@ You can create a list of visited countries, add cities you have visited within e
 ## Technologies Used 👩‍💻
 
 - Frontend: Angular, TypeScript
-- Backend: Java, Spring Boot
+- Backend: Java, Spring Boot https://github.com/J-Jillian/WhereInTheWorld-Back.git
 - Database: Local
 - External APIs: https://restcountries.com/
 ## Testing ✅
